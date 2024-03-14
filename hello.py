@@ -30,7 +30,7 @@ def page_not_found(e):
 @app.errorhandler(500)
 def internal_server_error(e):
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template("login.html",name=session.get('name'),current_time=datetime.utcnow())
 
