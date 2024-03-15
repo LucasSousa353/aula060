@@ -2,9 +2,13 @@
   width: 100%;
   max-width: 330px;
   padding: 20px 30px 30px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   border: 1px solid #1d1d1d;
   border-radius: 5px;
+}
+
+.form-signin .checkbox {
+  margin-bottom: 10px;
 }
 
 .form-signin .form-control {
