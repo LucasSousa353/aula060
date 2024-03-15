@@ -2,7 +2,7 @@ from flask import Flask, render_template, session, redirect, url_for, flash, req
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, SelectField
+from wtforms import StringField, SubmitField, SelectField,PasswordField
 from wtforms.validators import DataRequired
 from datetime import datetime
 from flask_moment import Moment
@@ -23,7 +23,7 @@ class NameForm(FlaskForm):
     
 class LoginForm(FlaskForm):
     username = StringField('Informe o seu usuário', validators=[DataRequired()])
-    password = StringField('Informe sua senha:', validators=[DataRequired()])
+    password = PasswordField('Informe sua senha:', validators=[DataRequired()])
     submit = SubmitField('Enviar')
 
 
