@@ -38,7 +38,7 @@ def internal_server_error(e):
 
 @app.route('/loginResponse')
 def loginResponse():
-    return render_template('loginResponse.html', username = session.get['username'])
+    return render_template('loginResponse.html', username = session.get['username'], current_time=datetime.utcnow())
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
