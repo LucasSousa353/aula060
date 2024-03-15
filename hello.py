@@ -46,7 +46,6 @@ def login():
     if form.validate_on_submit():
         session['username'] = form.username.data
         return redirect(url_for('loginResponse'))
-    
     return render_template("login.html",name=session.get('name'),current_time=datetime.utcnow(), form=form, username=session.get('username'), password=session.get('password'))
 
 @app.route('/', methods=['GET', 'POST'])
