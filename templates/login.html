@@ -5,8 +5,8 @@
 {% block page_content %}
 <div class="page-header">
 
-    <form method ="POST" action"/login">
-        <div> {{form.username.label}}: {{form.username(class="css_class")}}</div>
+    <form method ="POST" action"/login" class="form">
+        <div> {{form.username.label}}: {{form.username(class="css_class",placeholder="Usuário ou e-mail")}}</div>
     </form>
 
 </div>
