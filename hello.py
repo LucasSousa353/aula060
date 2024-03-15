@@ -36,7 +36,7 @@ def page_not_found(e):
 def internal_server_error(e):
     return render_template('500.html'), 500
 
-@app.route('/loginResponse')
+@app.route('/loginResponse', methods=['GET', 'POST'])
 def loginResponse():
     return render_template('loginResponse.html', username = session.get['username'], current_time=datetime.utcnow())
 
@@ -46,7 +46,7 @@ def login():
     if form.validate_on_submit():
         session['username'] = form.username.data
         return redirect(url_for('loginResponse'))
-    return render_template("login.html",name=session.get('name'),current_time=datetime.utcnow(), form=form, username=session.get('username'), password=session.get('password'))
+    return render_template("login.html", form=form, username=session.get('username'), password=session.get('password'))
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
