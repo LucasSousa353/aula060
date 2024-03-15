@@ -20,6 +20,11 @@ class NameForm(FlaskForm):
     institution = StringField('Informe a sua Insituição de ensino:', validators=[DataRequired()])
     discipline = SelectField(u'Informe a sua disciplina:', choices=[('dswa5', 'DSWA5'), ('dwba4', 'DWBA4'), ('GPSA5', 'Gestão de projetos')])
     submit = SubmitField('Submit')
+    
+class LoginForm(FlaskForm):
+    username = StringField('Informe o seu usuário', validators=[DataRequired()])
+    password = StringField('Informe sua senha:', validators=[DataRequired()])
+    submit = SubmitField('Enviar')
 
 
 @app.errorhandler(404)
@@ -32,9 +37,10 @@ def internal_server_error(e):
     return render_template('500.html'), 500
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template("login.html",name=session.get('name'),current_time=datetime.utcnow())
+    form = LoginForm()
+    return render_template("login.html",name=session.get('name'),current_time=datetime.utcnow(), form=form, username=session.get('username'), password=session.get('password'))
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
