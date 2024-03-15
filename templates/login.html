@@ -5,7 +5,8 @@
 {% block page_content %}
 <div class="page-header">
 
-    <form method ="POST" action"/login" class="form">
+    <form method ="POST" action"/login" class="form-signin">
+        <h2 class = "form-signin-heading">Login:</h2>
         <div> {{form.username(class="input-block-level",placeholder="Usuário ou e-mail")}}</div>
         <div> {{form.password(class="input-block-level",placeholder="Informe sua senha")}}</div>
         <div> {{form.submit(class="btn btn-large btn-primary")}}</div>
