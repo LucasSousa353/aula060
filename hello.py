@@ -46,7 +46,7 @@ def login():
 
 @app.route('/loginResponse', methods=['GET', 'POST'])
 def loginResponse():
-    return render_template('loginResponse.html', username = session.get['username'], current_time=datetime.utcnow())
+    return render_template('loginResponse.html', username = session.get('username'), current_time=datetime.utcnow())
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
